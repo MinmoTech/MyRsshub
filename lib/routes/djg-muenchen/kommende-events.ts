@@ -15,7 +15,7 @@ export const route: Route = {
         supportPodcast: false,
         supportScihub: false,
     },
-    name: 'Kommende events',
+    name: 'DJG Muenchen - Kommende events',
     maintainers: [],
     handler: async (ctx) => {
         const jsonData = await ofetch(
@@ -29,7 +29,7 @@ export const route: Route = {
             // item description
             description: item.desc,
             // item publish date or time
-            pubDate: parseDate(item.created_at),
+            pubDate: parseDate(item.start),
             image: item.image,
         }));
         return {
