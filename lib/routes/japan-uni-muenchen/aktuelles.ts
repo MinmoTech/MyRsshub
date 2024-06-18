@@ -34,8 +34,8 @@ export const route: Route = {
                     title: a.text(),
                     // We need an absolute URL for `link`, but `a.attr('href')` returns a relative URL.
                     link: `${baseUrl}/${a.attr('href')}`,
-                    pubDate: parseDate(item.find('p.datum').text()),
-                    image: item.find('img').attr('src'),
+                    pubDate: parseDate(item.find('p.datum').text(), 'DD.MM.YYYY'),
+                    image: 'https:' + item.find('img').attr('src'),
                 };
             });
           const items = await Promise.all(
