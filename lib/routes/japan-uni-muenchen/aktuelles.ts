@@ -31,7 +31,7 @@ export const route: Route = {
                 item = $(item);
                 const a = item.find('a').first();
                 return {
-                    title: a.text(),
+                    title: item.find('h2').text(),
                     // We need an absolute URL for `link`, but `a.attr('href')` returns a relative URL.
                     link: `${baseUrl}/${a.attr('href')}`,
                     pubDate: parseDate(item.find('p.datum').text(), 'DD.MM.YYYY'),
